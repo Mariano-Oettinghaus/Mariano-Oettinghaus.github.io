@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Académicos - Universidad Humani Mundial</title>
+    <style>
+        @page {
+            margin: 2cm;
+            size: letter;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .document {
+            margin-bottom: 40px;
+            page-break-after: always;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            color: #006747;
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header p {
+            color: #006747;
+            margin: 5px 0 0;
+            font-size: 16px;
+        }
+        .section {
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+        }
+        .section-title {
+            color: #006747;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #006747;
+            padding-bottom: 5px;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .info-label {
+            width: 140px;
+            font-weight: bold;
+            color: #006747;
+        }
+        .info-value {
+            flex: 1;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .table th,
+        .table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #006747;
+            color: white;
+            font-weight: bold;
+        }
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .signature-section {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 180px;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #000;
+        }
+        .barcode-area {
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to right, #000000 1px, transparent 1px, transparent 3px, #000000 3px, #000000 4px, transparent 4px, transparent 6px, #000000 6px, #000000 7px, transparent 7px, transparent 9px, #000000 9px, #000000 10px, transparent 10px, transparent 12px, #000000 12px, #000000 13px, transparent 13px, transparent 15px, #000000 15px);
+            margin: 15px 0;
+            position: relative;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+        .photo-area {
+            width: 100px;
+            height: 130px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border: 1px solid #ccc;
+            margin: 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 10px;
+            text-align: center;
+            font-style: italic;
+            overflow: hidden;
+            position: relative;
+        }
+        .photo-area::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at 30% 40%, #e8e8e8 0%, #d0d0d0 70%, #b8b8b8 100%);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .seal-area {
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="%23006747" stroke="%23000" stroke-width="0.8"/><text x="40" y="42" text-anchor="middle" font-size="9" fill="%23fff" font-family="Arial" font-weight="bold">UHM</text><path d="M18,40 L22,36 L38,38 L54,36 L58,40 L54,44 L38,42 L22,44 Z" fill="none" stroke="%23fff" stroke-width="0.4"/></svg>') no-repeat center;
+            background-size: contain;
+            margin: 10px auto;
+        }
+        .footer-note {
+            font-size: 11px;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        .centered {
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #006747;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- DOCUMENTO 1: CREDENCIAL ACADÉMICA -->
+    <div class="document">
+        <div class="header">
+            <img src="https://unimundial.edu.mx/titulacion/assets/images/logo/01.png" alt="Logo Universidad Humani Mundial">
+            <h1>Universidad Humani Mundial</h1>
+            <p>Credencial Académica Oficial</p>
+        </div>
+        <div class="section">
+            <div class="section-title">Credencial de Estudiante</div>
+            <div class="info-row">
+                <div class="info-label">Nombre:</div>
+                <div class="info-value">Mariano Concha Sodi</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">ID Estudiantil:</div>
+                <div class="info-value">987654321</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Carrera:</div>
+                <div class="info-value">Biología Ambiental</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Nivel:</div>
+                <div class="info-value">Undergraduate – Junior</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Campus:</div>
+                <div class="info-value">Monmouth, OR</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Fecha de Emisión:</div>
+                <div class="info-value">09/09/2023</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Fecha de Vencimiento:</div>
+                <div class="info-value">08/31/2025</div>
+            </div>
+            <div class="centered">
+                <div class="photo-area">Fotografía del Estudiante</div>
+            </div>
+            <div class="centered">
+                <div class="barcode-area">987654321 UHM 08/31/2025</div>
+            </div>
+            <div class="footer-note">Esta credencial es propiedad de la Universidad Humani Mundial. Su uso no autorizado está prohibido.</div>
+        </div>
+    </div>
+
+    <!-- DOCUMENTO 2: CRONOGRAMA DE CLASES -->
+    <div class="document">
+        <div class="header">
+            <img src="https://unimundial.edu.mx/titulacion/assets/images/logo/01.png" alt="Logo Universidad Humani Mundial">
+            <h1>Universidad Humani Mundial</h1>
+            <p>Cronograma Académico - Primavera 2025</p>
+        </div>
+        <div class="section">
+            <div class="section-title">Horario de Clases - Primavera 2025</div>
+            <div class="info-row">
+                <div class="info-label">Nombre del Estudiante:</div>
+                <div class="info-value">Mariano Concha Sodi</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">ID Estudiantil:</div>
+                <div class="info-value">987654321</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Programa:</div>
+                <div class="info-value">Biología Ambiental</div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8:00 - 9:15</td>
+                        <td>BI 301 - Ecología Aplicada</td>
+                        <td>CH 222 - Química Orgánica</td>
+                        <td>BI 301 - Ecología Aplicada</td>
+                        <td>CH 222 - Química Orgánica</td>
+                        <td>MA 211 - Estadística Biológica</td>
+                    </tr>
+                    <tr>
+                        <td>9:30 - 10:45</td>
+                        <td>MA 211 - Estadística Biológica</td>
+                        <td>BI 305 - Biodiversidad Tropical</td>
+                        <td>MA 211 - Estadística Biológica</td>
+                        <td>BI 305 - Biodiversidad Tropical</td>
+                        <td>BI 301 - Ecología Aplicada</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 12:15</td>
+                        <td>BI 305 - Biodiversidad Tropical</td>
+                        <td>BI 310 - Métodos de Investigación</td>
+                        <td>BI 310 - Métodos de Investigación</td>
+                        <td>BI 305 - Biodiversidad Tropical</td>
+                        <td>BI 310 - Métodos de Investigación</td>
+                    </tr>
+                    <tr>
+                        <td>12:30 - 13:45</td>
+                        <td colspan="5" style="text-align:center; background-color:#f9f9f9;">Almuerzo / Tiempo Libre</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:15</td>
+                        <td>LAB BI 301 (Laboratorio I)</td>
+                        <td>LAB CH 222 (Laboratorio II)</td>
+                        <td>LAB BI 301 (Laboratorio I)</td>
+                        <td>LAB CH 222 (Laboratorio II)</td>
+                        <td>LAB MA 211 (Análisis de Datos)</td>
+                    </tr>
+                    <tr>
+                        <td>15:30 - 16:45</td>
+                        <td>Tutoría Académica</td>
+                        <td>LIBRE</td>
+                        <td>Tutoría Académica</td>
+                        <td>LIBRE</td>
+                        <td>Tutoría Académica</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 20px;">
+                <strong>Notas importantes:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>Los laboratorios requieren asistencia obligatoria. Falta = 1 ausencia = advertencia formal.</li>
+                    <li>Examen Parcial 1: 14 de febrero de 2025</li>
+                    <li>Examen Parcial 2: 11 de marzo de 2025</li>
+                    <li>Examen Final: 9 de abril de 2025</li>
+                    <li>Último día para retirarse sin penalización: 20 de febrero de 2025</li>
+                    <li>Finalización del semestre: 24 de abril de 2025</li>
+                </ul>
+            </div>
+            <div class="footer-note">Este horario está sujeto a cambios con notificación previa por parte de la Oficina de Registro.</div>
+        </div>
+    </div>
+
+    <!-- DOCUMENTO 3: RECIBO DE MATRÍCULA -->
+    <div class="document">
+        <div class="header">
+            <img src="https://unimundial.edu.mx/titulacion/assets/images/logo/01.png" alt="Logo Universidad Humani Mundial">
+            <h1>Universidad Humani Mundial</h1>
+            <p>Recibo Oficial de Matrícula - Primavera 2025</p>
+        </div>
+        <div class="section">
+            <div class="section-title">Detalles de Pago</div>
+            <div class="info-row">
+                <div class="info-label">Nombre del Estudiante:</div>
+                <div class="info-value">Mariano Concha Sodi</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">ID Estudiantil:</div>
+                <div class="info-value">987654321</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Fecha del Recibo:</div>
+                <div class="info-value">12 de enero de 2025</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Período Académico:</div>
+                <div class="info-value">Primavera 2025</div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tasa de Matrícula</td>
+                        <td>$2,450.00</td>
+                    </tr>
+                    <tr>
+                        <td>Cuota de Laboratorio (BI 301 + CH 222)</td>
+                        <td>$180.00</td>
+                    </tr>
+                    <tr>
+                        <td>Seguro Estudiantil</td>
+                        <td>$95.00</td>
+                    </tr>
+                    <tr>
+                        <td>Actividades Académicas</td>
+                        <td>$45.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total a Pagar</strong></td>
+                        <td><strong>$2,770.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Pell Grant (Subsidio Federal)</td>
+                        <td>-$1,800.00</td>
+                    </tr>
+                    <tr>
+                        <td>Beca WOU - Mérito Académico</td>
+                        <td>-$970.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Pagado</strong></td>
+                        <td><strong>-$2,770.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Saldo Final</strong></td>
+                        <td><strong>$0.00</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 30px;">
+                <p>El pago se realizó mediante transferencia electrónica y fue confirmado por el sistema financiero de la universidad.</p>
+            </div>
+            <div class="signature-section">
+                <div class="signature-line">Firma del Registrador<br>Dr. Elena M. Ruiz</div>
+                <div class="seal-area"></div>
+            </div>
+            <div class="footer-note">Este recibo sirve como comprobante oficial de matrícula y pago. No se aceptan copias digitales sin sello físico vigente.</div>
+        </div>
+    </div>
+
+</body>
+</html>
